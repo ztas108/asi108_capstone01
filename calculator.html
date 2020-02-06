@@ -1,0 +1,159 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+    var historyId = 0;
+    var result;
+    function insert(n) {
+      document.caltxt.display.value += n;
+    }
+    
+    function equal() {
+                       if (isNaN(eval(document.caltxt.display.value))) {
+                                                                               document.caltxt.display.value = "ERROR";
+                                                                                }
+                       else {
+                              historyId++;
+                              $("#history").append("<li id='history-" + historyId + "'>" + document.caltxt.display.value + "</li>");
+                               result = eval(document.caltxt.display.value);
+                          
+                                  $("#history-" + historyId).append(" = " + result);
+                               }
+
+                     
+
+
+      
+    }
+    function clr() {
+      document.caltxt.display.value = "";
+    }
+
+  </script>
+
+  <style>
+    h1 {
+      font-size: 50px;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .main {
+      align-content: center;
+      background-image: linear-gradient(236deg, #74ebd5, #acb6e5);
+      margin: auto;
+      margin-top: 90px;
+      height: 450px;
+      width: 550px;
+      justify-content: center;
+
+    }
+
+    #demo input {
+      width: 450px;
+      height: 95px;
+      background-color: black;
+      color: white;
+      text-align: right;
+      padding-right: 20px;
+      margin-top: 20px;
+      margin-left: 35px;
+      border: 7px solid #ff0080;
+      font-size: 50px;
+    }
+
+    input[type=button] {
+      height: 50px;
+      width: 117px;
+      margin: 0px;
+      font-size: 30px;
+    }
+
+    .tab {
+      border: 7px solid #0099ff;
+      width: 470px;
+      height: 290px;
+      margin-left: 35px;
+    }
+
+    .res {
+      background-color: dimgray;
+      width: 470px;
+      height: 200px;
+      align-content: center;
+      margin: auto;
+      overflow: hidden;
+
+    }
+
+    #opr {
+      text-align: center;
+      padding-left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CALCULATOR</h1>
+  </header>
+  <div class="main">
+    <form name="caltxt" id="demo">
+      <input type="text" name="display">
+    </form>
+    <div class="tab">
+      <table>
+        <tr>
+          <input type="button" class="button" value="+" onclick="insert('+')">
+          <input type="button" class="button" value="-" onclick="insert('-')">
+          <input type="button" class="button" value="x" onclick="insert('*')">
+          <input type="button" class="button" value="÷" onclick="insert('/')">
+        </tr>
+
+        <tr>
+          <input type="button" class="button" value="7" onclick="insert(7)" style="height:60px">
+          <input type="button" class="button" value="8" onclick="insert(8)" style="height:60px">
+          <input type="button" class="button" value="9" onclick="insert(9)" style="height:60px">
+          <input type="button" class="button" id="equal" value="=" onclick="equal()"
+            style="height:60px;background-color:#ff6600">
+          <br>
+        </tr>
+        <tr>
+          <input type="button" class="button" value="4" onclick="insert(4)" style="height:60px">
+          <input type="button" class="button" value="5" onclick="insert(5)" style="height:60px">
+          <input type="button" class="button" value="6" onclick="insert(6)" style="height:60px">
+          <br>
+        </tr>
+        <tr>
+          <input type="button" class="button" value="1" onclick="insert(1)" style="height:60px">
+          <input type="button" class="button" value="2" onclick="insert(2)" style="height:60px">
+          <input type="button" class="button" value="3" onclick="insert(3)" style="height:60px">
+          <br>
+        </tr>
+        <tr>
+          <input type="button" class="button" value="0" onclick="insert(0)" style="height:60px">
+          <input type="button" class="button" value="." onclick="insert('.')" style="height:60px">
+          <input type="button" class="button" value="AC" onclick="clr()" style="height:60px">
+          <br>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br><br>
+  <div class="res">
+    <table id="opr">
+      <tr>
+        <th style="font-size:30px;">Calculator history</th>
+      </tr>
+      <tr>
+        <td id="history" style="font-size:30px;"></td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+
+</html>
