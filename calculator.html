@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <title>Calculator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="Calculator.css">
+<script src="calculator.js"></script>
+</head>
+
+<body>
+
+    <h1>CALCULATOR</h1>
+
+  <div>
+  <section>
+  <div class="main">
+    <form name="calTxt" id="demo">
+      <input type="text"  name="display">
+    </form>
+    <div class="key">
+      <table>
+        <tr>
+          <input type="button" class="button" value="+" onclick="insert('+')">
+          <input type="button" class="button" value="-" onclick="insert('-')">
+          <input type="button" class="button" value="x" onclick="insert('*')">
+          <input type="button" class="button" value="÷" onclick="insert('/')">
+        </tr>
+
+        <tr>
+          <input type="button" class="button" value="7" onclick="insert(7)" style="height:60px">
+          <input type="button" class="button" value="8" onclick="insert(8)" style="height:60px">
+          <input type="button" class="button" value="9" onclick="insert(9)" style="height:60px">
+          <input type="button" class="button" value="C" onclick="backSpace()"  style="height:60px">
+          <br>
+        </tr>
+        <tr>
+          <input type="button" class="button" value="4" onclick="insert(4)" style="height:60px">
+          <input type="button" class="button" value="5" onclick="insert(5)" style="height:60px">
+          <input type="button" class="button" value="6" onclick="insert(6)" style="height:60px">
+          <input type="button" class="button" id="equal" value="=" onclick="equal()" style="height:60px;background-color:#ff6600">
+          <br>
+        </tr>
+        <tr>
+          <input type="button" class="button" value="1" onclick="insert(1)" style="height:60px">
+          <input type="button" class="button" value="2" onclick="insert(2)" style="height:60px">
+          <input type="button" class="button" value="3" onclick="insert(3)" style="height:60px">
+          <br>
+        </tr>
+        <tr>
+          <input type="button" class="button" value="0" onclick="insert(0)" style="height:60px">
+          <input type="button" class="button" value="." onclick="insert('.')" style="height:60px">
+          <input type="button" class="button" value="AC" onclick="clr()" style="height:60px">
+          <br>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br><br>
+  <div class="container">
+    <p style="text-align: center;">Calculator history</p>
+    <ol id="history" ></ol>
+  </div>
+  
+</body>
+
+</html>
